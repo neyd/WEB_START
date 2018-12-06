@@ -159,3 +159,77 @@ button.my_button_add:hover {
 .btn-img img {
     width: 100%;
 }
+
+ul.main-menu {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.main-menu li {
+    padding: 1em;
+    background: hsl(0,0%,90%);
+    border: 1px solid hsl(0,0%,85%);
+    color: hsl(0,0%,25%);
+    transition: all .3s ease;
+    cursor:pointer;
+}
+
+ul.main-menu a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul.main-menu li:hover {
+    background: hsl(0,0%,40%);
+    color: hsl(0,0%,90%);
+}
+
+.news {
+    display: flex;
+    flex-wrap: wrap;
+    background: yellow;
+}
+
+.one-news {
+    width: calc(33% - 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid hsl(0,0%,70%);
+    background: hsl(0,0%,85%);
+    margin: 20px;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.one-news-name {
+    font-size: 30px;
+}
+
+@media screen and (max-width: 450px) {
+    ul.main-menu {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 571px) and (max-width: 850px) {
+    .one-news {
+        width: calc(50% - 40px);
+    }
+
+    .news {
+        background: red;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .one-news {
+        width: calc(100% - 40px);
+    }
+
+    .news {
+        background: green;
+    }
+}
