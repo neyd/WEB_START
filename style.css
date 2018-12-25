@@ -167,6 +167,8 @@ ul.main-menu {
     justify-content: space-between;
     list-style-type: none;
     padding: 0;
+    margin: 0;
+    width: 100%;
 }
 
 ul.main-menu li {
@@ -191,7 +193,7 @@ ul.main-menu li:hover {
 .news {
     display: flex;
     flex-wrap: wrap;
-    background: yellow;
+    /*background: yellow;*/
 }
 
 .one-news {
@@ -426,4 +428,93 @@ h1.text {
         text-align: center;
     }
 
+}
+
+
+
+.reklama {
+    position: fixed;
+    right: 0;
+    top: 20%;
+}
+
+.reklama-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    background: url(mandarin.jpg);
+    /* position: relative; */
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+    overflow: hidden;
+    border-radius: 14px;
+    position: relative;
+}
+
+.reklama-container h1 {
+    font-size: 24px;
+    color: white;
+    z-index: 10;
+}
+
+.reklama-container span.white_back {
+    background: rgba(0,0,0,.3);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 5;
+}
+
+.to_click {
+    animation-name: to_click_action;
+    animation-duration: .3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease;
+}
+
+.gogogo {
+    animation-name: gogogo;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+
+
+/* The animation code */
+@keyframes to_click_action {
+    from {
+        color: red;
+        font-size: 18px;
+    }
+    to {
+        color: yellow;
+        font-size:25px;
+    }
+}
+
+/* The animation code */
+@keyframes gogogo {
+    0% {
+        right: 0;
+        top: 20%;
+    }
+    25% {
+        right: 60%;
+        top: 60%;
+    }
+    80% {
+        right: 0%;
+        top: 80%;
+    }
+    100% {
+        right: 80%;
+        top: 0%;
+    }
 }
