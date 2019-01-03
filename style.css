@@ -518,3 +518,22 @@ h1.text {
         top: 0%;
     }
 }
+
+
+.js-btn {
+    padding: 1em;
+    background: hsl(0,0%,80%);
+    margin: 5px;
+    transition: all .3s ease;
+}
+
+.main_container {
+    display: flex;
+    justify-content: center;
+}
+
+.second_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

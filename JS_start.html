@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS START</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="main_container" onclick="addBorder(this)">
+
+        <div class="js-btn" id="buttonFirst" onclick="changeColor(this,'black')">
+            Кнопка 1
+        </div>
+
+        <div class="js-btn" onclick="changeColorToRed()">
+            Кнопка 2
+        </div>
+
+        <div class="js-btn" onclick="clearConteiner()">
+            Кнопка 3
+        </div>
+
+    </div>
+
+    <div class="second_container">
+
+
+        <div class="form">
+            <input type="text" id="need_color" placeholder="Введіть бажаний колір" value="yellow">
+            <input type="submit" value="Змінити колір" class="js-btn" onclick="showPreview()">
+        </div>
+
+        <div class="example">
+            <div class="js-btn" id="exampleBtn">Кнопка</div>
+        </div>
+
+        <div class="add-container" id="myConteiner">
+
+        </div>
+    </div>
+
+
+    <script>
+
+        function changeColorToRed() {
+            var button1 = document.getElementById('buttonFirst');
+
+            button1.innerHTML = 'Randodmdmdsdsd';
+            button1.style.backgroundColor = 'red';
+            button1.style.color = 'white';
+            button1.style.fontSize = '20px';
+        }
+
+
+        function addBorder(el) {
+            el.style.border = '1px solid yellow';
+        }
+
+        function changeColor(el,color) {
+            el.style.backgroundColor = color;
+        }
+        
+        
+        function showPreview() {
+            var buttonExample = document.getElementById('exampleBtn');
+
+            var needColorInput = document.getElementById('need_color');
+
+            var needColor = needColorInput.value;
+
+            buttonExample.style.backgroundColor = needColor;
+
+        }
+
+        function addNewEl() {
+            var container = document.getElementById('myConteiner');
+
+            container.innerHTML = container.innerHTML + '<h1>asdasdasdsad</h1>';
+        }
+
+        function clearConteiner() {
+            var container = document.getElementById('myConteiner');
+
+            container.innerHTML = '';
+        }
+
+
+        document.getElementById('exampleBtn').addEventListener('click',addNewEl);
+
+        // document.getElementById('buttonFirst').on('click',function () {
+        //
+        // });
+
+    </script>
+</body>
+</html>
