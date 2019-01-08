@@ -534,6 +534,23 @@ h1.text {
 
 .second_container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    height: 100vh;
+}
+.anima_block {
+    height: 100vh;
+}
+
+.anima_block_second {
+    height: 100vh;
+}
+.anima_block {
+    background: rgba(180,180,180,.6);
+    height: 100vh;
+    box-shadow: 0 0 10px;
+}
+
+.non-visible {
+    opacity: 0;
 }

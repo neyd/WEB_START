@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <title>JS START</title>
     <link href="style.css" rel="stylesheet">
+    <link href="animate.css" rel="stylesheet">
 </head>
 <body>
 
-    <div class="main_container" onclick="addBorder(this)">
+    <div class="main_container animated " onclick="addBorder(this)">
 
         <div class="js-btn" id="buttonFirst" onclick="changeColor(this,'black')">
             Кнопка 1
@@ -23,7 +24,7 @@
 
     </div>
 
-    <div class="second_container">
+    <div class="second_container" id="second_container">
 
 
         <div class="form">
@@ -41,6 +42,16 @@
     </div>
 
 
+    <div class="anima_block animated non-visible my_super_anima" id="anima_block">
+        <h1>Its animated block by window scroll</h1>
+
+    </div>
+
+    <div class="anima_block_second my_super_anima" id="anima_block_second">
+        <h1>Its animated block by window scroll</h1>
+    </div>
+
+    <script type="text/javascript" src="jquery/jquery-3.3.1.js"></script>
     <script>
 
         function changeColorToRed() {
@@ -79,6 +90,7 @@
             container.innerHTML = container.innerHTML + '<h1>asdasdasdsad</h1>';
         }
 
+        // очистка контейнера з текстом
         function clearConteiner() {
             var container = document.getElementById('myConteiner');
 
@@ -92,6 +104,41 @@
         //
         // });
 
+
+        // window.onload = function () {
+        //     var block = document.getElementById('second_container');
+        //
+        //     block.className = 'second_container animated flash';
+        // }
+
+        // window.onscroll = function () {
+        //     scrollTopDocument = document.scrollTop;
+        //     console.log(scrollTopDocument);
+        // }
+
+        $(function () {
+            var block = $('#second_container');
+            block.addClass('animated').addClass('flash');
+            // block.addClass('flash');
+        });
+
+        console.log($('.my_super_anima'));
+
+        var scrollTopDocument = 0;
+        var need_anima = $('#anima_block');
+        $(window).scroll(function () {
+            scrollTopDocument = $(this).scrollTop();
+            if (scrollTopDocument+$(this).height()-200>=need_anima.offset().top){
+                need_anima.addClass('fadeInLeft');
+            } else {
+                need_anima.removeClass('fadeInLeft');
+            }
+
+            if (scrollTopDocument>=need_anima.offset().top+need_anima.height()-200){
+                need_anima.removeClass('fadeInLeft').addClass('fadeOutRight');
+            }
+
+        });
     </script>
 </body>
 </html>
